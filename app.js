@@ -2,6 +2,9 @@ angular.module('flapperNews', [])
 .controller('MainCtrl', [
 '$scope',
 function($scope){
+$scope.addPost = function(){
+    $scope.posts.push({title: 'A new post!', upvotes: 0});
+};
 $scope.test = 'Hello world!';
 $scope.posts = [
   {title: 'post 1', upvotes: 5},
