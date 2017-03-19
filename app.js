@@ -3,9 +3,11 @@ angular.module('flapperNews', [])
 '$scope',
 function($scope){
 $scope.addPost = function(){
-    $scope.posts.push({title: 'A new post!', upvotes: 0});
+    if(!$scope.title || $scope.title === ''){ return; }
+    $scope.posts.push({title: $scope.title, upvotes: 0});
+    $scope.title = '';
 };
-$scope.test = 'Hello world!';
+
 $scope.posts = [
   {title: 'post 1', upvotes: 5},
   {title: 'post 2', upvotes: 2},
@@ -16,3 +18,5 @@ $scope.posts = [
 
 
 }]);
+
+
