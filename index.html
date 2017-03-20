@@ -1,6 +1,8 @@
 <html>
   <head>
-    <title>My Angular App!</title>
+    <title>My Reddit Clone</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/boostrap.min.css" rel="stylesheet">
+    
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="app.js"></script>
   </head>
@@ -10,7 +12,10 @@
    <a ng-show="post.link" href="{{post.link}}">
       {{post.title}}
    </a>
-   <span ng-hide=
+   <span ng-hide="post.link">
+     {{post.title}}
+   </span>
+   - upvotes: {{post.upvotes}}
 </div>
 <form ng-submit="addPost()">
     <input type="text" placeholder="Title" ng-model="title"></input>
